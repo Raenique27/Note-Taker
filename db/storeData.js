@@ -12,6 +12,18 @@ class Save {
     read() {
         return readNote('db.db.json', 'utf8');
     }
+    getNotes() {
+        return this.read().then(notes => {
+            let parsedNotes;
+            try {
+                parsedNotes = [].concat(JSON.parse(notes));
+            } catch (err) {
+                parsedNotes = [];
+            }
+            return parsedNotes;
+        });
+    }
+
 };
 
 
