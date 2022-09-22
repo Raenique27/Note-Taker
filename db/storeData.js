@@ -7,10 +7,10 @@ const writeFile = util.promisify(fs.writeFile);
 
 class Save {
     write(note) {
-        return writeNote('db/db.json', JSON.stringify(note));
+        return writeFile('db/db.json', JSON.stringify(note));
     }
     read() {
-        return readNote('db.db.json', 'utf8');
+        return readFile('db.db.json', 'utf8');
     }
     getNotes() {
         return this.read().then(notes => {
@@ -40,7 +40,6 @@ class Save {
             .then(() => newNote);
     }
 
-
 };
 
-
+module.exports = new Save();
