@@ -9,7 +9,9 @@ class Save {
     write(note) {
         return writeNote('db/db.json', JSON.stringify(note));
     }
-    
+    read() {
+        return readNote('db.db.json', 'utf8');
+    }
 };
 
 
