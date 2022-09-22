@@ -10,7 +10,7 @@ class Save {
         return writeFile('db/db.json', JSON.stringify(note));
     }
     read() {
-        return readFile('db.db.json', 'utf8');
+        return readFile('db/db.json', 'utf8');
     }
     getNotes() {
         return this.read().then(notes => {
